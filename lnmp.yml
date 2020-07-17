@@ -1,0 +1,35 @@
+version: "2"
+services: 
+  web:
+    build: 
+        context: .
+        dockerfile: DockerfileDev
+    volumes:
+        - .:/www
+    restart: always    
+    environment:
+        - APP_ENV=local
+        - APP_DEBUG=true
+        - APP_TIMEZONE=PRC
+    ports:
+        - "18001:80"
+        
+#  mysql
+#  database: 
+#    image: mysql:5.7
+#    environment: 
+#      MYSQL_ROOT_PASSWORD: "root"
+#      MYSQL_USER: "ttt"
+#      MYSQL_PASSWORD: "1234"
+#    volumes:
+#      - ./data/database:/var/lib/mysql
+#    ports:
+#        - 18002:6379      
+
+#  redis
+#    redis:
+#        image: redis
+#        volumes:
+#            - ./data/redis:/data
+#        ports:
+#            - 6379:6379 

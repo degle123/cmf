@@ -1,0 +1,3 @@
+FROM registry.cn-hangzhou.aliyuncs.com/degle/lnmp:v1
+ADD ./ /data/webapp
+RUN	cd /data/webapp && rm -rf .settings .buildpath .gitignore .project .git .idea .vscode Docker .dockerignore DockerfileDev Dockerfile *.yml
